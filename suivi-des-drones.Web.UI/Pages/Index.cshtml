@@ -1,10 +1,129 @@
 ﻿@page
+@using suivi_des_drones.Core.Models;
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Page acceuil";
+    // string title="suivi des drones"; // premiere étape: .ToUpper();
+}
+@functions {
+    string title = "suivi des drones";
+
+
+    List<Drone> PrepareListOfDrones()
+    {
+        return this.Model.Drones;
+
+    }
+
+    //List<Drone> PrepareListOfDrones()
+    //{
+    //    return this.Model.Drones;
+    //}
+
+    string GetTitle()
+    {
+        return this.title.ToUpper();
+    }
+
+    List<HealthStatus> PrepareListStatus()
+    {
+        //throw new NotImplementedException();
+        return this.Model.StatusList;
+    }
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<h1 >@this.GetTitle()</h1>
+
+
+<div class="row">
+    <div class="col-1">Status:</div>
+    <div class="col-5">
+
+
+        @try
+        {
+            //bien meilleur rendu de cette facons on ne rentre pas dans le select si une exeption est levé
+            var list = this.PrepareListStatus();
+            <select>
+                @foreach (var item in list)
+                {
+                    <option value="@item.Id">@item.Label</option>
+                }
+            </select>
+            // cette facons ne marche pas bien l'exeption est levé dans le select
+            @*<select>
+        @foreach (var item in this.PrepareListStatus())
+        {
+        <option value="@item.Id">@item.Label</option>
+        }
+        </select>*@
+        }
+        catch (Exception ex)
+        {
+            <div><b style="color:red">Le filtre des status n'est pas disponnible!!!</b></div>
+        }
+
+    </div>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Matricule</th>
+            <th>Status</th>
+            <th>Date de creation</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in PrepareListOfDrones())
+        {
+            <tr>
+                <td>@item.Matricule</td>
+                <td>
+                    @{
+                        //gestions avec if()
+                        //string style = "";
+                        //if (item.HealthStatus.Id == HealthStatus.Broken.Id)
+                        //{
+                        //    style = "font-weight:bold ";
+                        //}
+                        //<div class="" style="@style">
+                        //    @item.HealthStatus.Label
+                        //</div>
+                        //solution avec un switch
+                        string style = "";
+
+                        Func<dynamic, object> BrokenDiv =@<div style="@style">@item.HealthStatus.Label</div>;
+
+
+                        @switch (item.HealthStatus.Id)
+                        {
+                            case -1:
+                                {
+                                    style = "font-weight:bold";
+                                    @BrokenDiv(item)
+                                    ;
+                                }
+                                break;
+                            case 0:
+                                {
+                                    <span>@item.HealthStatus.Label</span>
+                                }
+                                break;
+                            case -2:
+                                {
+                                    <i>@item.HealthStatus.Label</i>
+                                }
+                                break;
+                        }
+                    }
+
+                </td>
+                <td>@item.CreationDate.ToString("f")</td>
+            </tr>
+        }
+    </tbody>
+</table>
