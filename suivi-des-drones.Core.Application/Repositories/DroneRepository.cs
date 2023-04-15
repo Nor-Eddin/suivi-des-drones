@@ -1,4 +1,5 @@
-﻿using suivi_des_drones.Core.Models;
+﻿using suivi_des_drones.Core.Interfaces.Repositories;
+using suivi_des_drones.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,22 @@ namespace suivi_des_drones.Core.Application.Repositories
     /// Repository qui gére le CRUD
     /// </summary>
     /// <returns></returns>
-    public class DroneRepository
+    public class DroneRepository:IDroneRepository
     {
         /// <summary>
         /// Return la liste compléte des drones
         /// </summary>
         /// <returns></returns>
-        #region Public Methode
+       
+        #region Public Methods
         public List<Drone> GetAll()
         {
-            return new ();
+            return new()
+            {
+                new(),
+                new Drone()
+            };
+           
         }
         #endregion
     }

@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Web.UI", "suivi-des-drones.Web.UI\suivi-des-drones.Web.UI.csproj", "{3B51BDDE-620B-4A65-9AF5-6D593D0A3C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Web.UI", "suivi-des-drones.Web.UI\suivi-des-drones.Web.UI.csproj", "{3B51BDDE-620B-4A65-9AF5-6D593D0A3C85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{D8A5E6FB-DDDB-4E32-8813-A30A7BD39267}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E4AF8D2B-7ABB-4610-8C32-E1A899B6C565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Models", "suivi-des-drones.Core.Models\suivi-des-drones.Core.Models.csproj", "{CF88CA34-1C8F-4E45-AFE1-FC2E65CAFBFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Core.Models", "suivi-des-drones.Core.Models\suivi-des-drones.Core.Models.csproj", "{CF88CA34-1C8F-4E45-AFE1-FC2E65CAFBFF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Interfaces", "suivi-des-drones.Core.Interfaces\suivi-des-drones.Core.Interfaces.csproj", "{AB7690E9-90EE-4B8C-B26A-7C604E27A0CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Application", "suivi-des-drones.Core.Application\suivi-des-drones.Core.Application.csproj", "{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Infrastructure", "suivi-des-drones.Core.Infrastructure\suivi-des-drones.Core.Infrastructure.csproj", "{3BDA9B84-2C34-448E-881F-5378AC051D28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDA9B84-2C34-448E-881F-5378AC051D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDA9B84-2C34-448E-881F-5378AC051D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDA9B84-2C34-448E-881F-5378AC051D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDA9B84-2C34-448E-881F-5378AC051D28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{CF88CA34-1C8F-4E45-AFE1-FC2E65CAFBFF} = {D8A5E6FB-DDDB-4E32-8813-A30A7BD39267}
 		{AB7690E9-90EE-4B8C-B26A-7C604E27A0CE} = {D8A5E6FB-DDDB-4E32-8813-A30A7BD39267}
 		{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA} = {D8A5E6FB-DDDB-4E32-8813-A30A7BD39267}
+		{3BDA9B84-2C34-448E-881F-5378AC051D28} = {D8A5E6FB-DDDB-4E32-8813-A30A7BD39267}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6055A65-9E76-4DB1-889B-413D067FF22A}
