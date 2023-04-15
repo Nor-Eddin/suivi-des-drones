@@ -43,7 +43,7 @@ namespace suivi_des_drones.Web.UI.Pages
         private void SetListOfDrones()
         {
 
-        this.Drones.Add(new () { Matricule = "54XXD0", CreationDate = DateTime.Now});
+        this.Drones.Add(new () { Matricule = "54XXD0", CreationDate = DateTime.Now,HealthStatus=HealthStatus.Broken});
         this.Drones.Add(new () { Matricule = "15FDR14", CreationDate = DateTime.Now.AddDays(-180) });
         }
         private void SetListOfStatus()
