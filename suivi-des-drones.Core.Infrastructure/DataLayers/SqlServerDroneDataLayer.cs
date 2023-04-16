@@ -19,6 +19,7 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
         {
             this.context = context;
         }
+
         #endregion
         #region Public Methods
         public List<Drone> GetList()
@@ -33,7 +34,15 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
             return query.ToList();
             
         }
+        public void AddOne(Drone drone)
+        {
+            this.context?.Drones.Add(drone);
+            var entry = this.context?.Entry(drone.HealthStatus);
+            entry.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            this.context?.SaveChanges();
+        }
+
         #endregion
-        
+
     }
 }

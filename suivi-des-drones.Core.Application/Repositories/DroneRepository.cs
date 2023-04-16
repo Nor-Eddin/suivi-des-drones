@@ -35,6 +35,11 @@ namespace suivi_des_drones.Core.Application.Repositories
             return this.datalayer.GetList();
            
         }
+        public void Save(Drone drone)
+        {
+            drone.HealthStatus = HealthStatus.OK;
+            this.datalayer.AddOne(drone);
+        }
         #endregion
     }
 }

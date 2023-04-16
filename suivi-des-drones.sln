@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E4AF8D2B-7ABB-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Core.Models", "suivi-des-drones.Core.Models\suivi-des-drones.Core.Models.csproj", "{CF88CA34-1C8F-4E45-AFE1-FC2E65CAFBFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Interfaces", "suivi-des-drones.Core.Interfaces\suivi-des-drones.Core.Interfaces.csproj", "{AB7690E9-90EE-4B8C-B26A-7C604E27A0CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Core.Interfaces", "suivi-des-drones.Core.Interfaces\suivi-des-drones.Core.Interfaces.csproj", "{AB7690E9-90EE-4B8C-B26A-7C604E27A0CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Application", "suivi-des-drones.Core.Application\suivi-des-drones.Core.Application.csproj", "{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Core.Application", "suivi-des-drones.Core.Application\suivi-des-drones.Core.Application.csproj", "{B5D35419-7646-4AA6-BC0B-6AFAF618D7CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "suivi-des-drones.Core.Infrastructure", "suivi-des-drones.Core.Infrastructure\suivi-des-drones.Core.Infrastructure.csproj", "{3BDA9B84-2C34-448E-881F-5378AC051D28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "suivi-des-drones.Core.Infrastructure", "suivi-des-drones.Core.Infrastructure\suivi-des-drones.Core.Infrastructure.csproj", "{3BDA9B84-2C34-448E-881F-5378AC051D28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

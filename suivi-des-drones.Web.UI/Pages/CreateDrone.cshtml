@@ -1,0 +1,15 @@
+﻿@page "/creation-drone"
+@using suivi_des_drones.Web.UI.Pages
+@model CreateDroneModel
+@{
+}
+
+<h1>Ajout d'un nouveau drone</h1>
+
+<form method="post">
+    @*<input name="Matricule"/>
+    <input name="dateCreation"/>*@
+    <input asp-for="MonDrone.Matricule"/>
+    <input asp-for="MonDrone.CreationDate" />
+    <button>Creer</button>@* le premier bouton dans un formulaire est toujour d'office un submit*@
+</form>

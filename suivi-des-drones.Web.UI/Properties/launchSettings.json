@@ -1,21 +1,14 @@
-﻿{
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:2495",
-      "sslPort": 44360
-    }
-  },
+{
   "profiles": {
     "suivi_des_drones.Web.UI": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
+      "commandLineArgs": "test=1",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7251;http://localhost:5251",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7251;http://localhost:5251"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -23,6 +16,14 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:2495",
+      "sslPort": 44360
     }
   }
 }
