@@ -13,10 +13,12 @@ namespace suivi_des_drones.Web.UI.Pages
         #region Fields
         private readonly ILogger<IndexModel> _logger;
         private readonly IDroneRepository repository;
-            ;
+            
         #endregion
         #region constructor
-        public IndexModel(ILogger<IndexModel> logger,IDroneRepository repository)
+        public IndexModel(ILogger<IndexModel> logger,
+            IConfiguration configuration,
+            IDroneRepository repository)
         {
            
             _logger = logger;
