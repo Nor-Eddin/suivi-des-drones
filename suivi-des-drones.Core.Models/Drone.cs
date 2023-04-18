@@ -14,10 +14,12 @@ namespace suivi_des_drones.Core.Models
     {
         #region Properties
         //[Key]
+        //[Required]
         public string Matricule { get; set; } = string.Empty;
         public DateTime CreationDate { get; set; }
         //public HealthStatus HealthStatus { get; set; } = HealthStatus.OK;
-        public HealthStatus HealthStatus { get; set; } =HealthStatus.OK;
+        public HealthStatus HealthStatus { get; set; } =null;
+        public decimal healthStatusId { get; set; } = HealthStatus.OK.Id;
         #endregion
     }
 }

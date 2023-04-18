@@ -17,5 +17,9 @@ namespace suivi_des_drones.Core.Interfaces.Infrastructures
         /// </summary>
         /// <returns></returns>
         List<Drone> GetList();
+        /// <summary>
+        /// Permet l'ajout d'un nouveau drone dans la BDD
+        /// </summary>
+        void AddOne(Drone drone);
     }
 }
