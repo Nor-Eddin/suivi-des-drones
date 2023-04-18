@@ -20,7 +20,9 @@ builder.Services.AddDbContext<DronesDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 builder.Services.AddScoped<IDroneDatalayer,SqlServerDroneDataLayer>();
+builder.Services.AddScoped<IUserDataLayer, SqlServerUserDatalayer>();
 builder.Services.AddScoped<IDroneRepository,DroneRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
