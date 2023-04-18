@@ -13,5 +13,11 @@ namespace suivi_des_drones.Core.Interfaces.Repositories
     public interface IDroneRepository
     {
         List<Drone> GetAll();
+        /// <summary>
+        /// Ajout ou updated'un drone
+        /// </summary>
+        /// <param name="drone"></param>
+        void Save(Drone drone);
+        
     }
 }
