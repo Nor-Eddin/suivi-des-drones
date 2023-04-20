@@ -5,28 +5,31 @@ using suivi_des_drones.Core.Infrastructure.DataLayers;
 using suivi_des_drones.Core.Interfaces.Infrastructures;
 using suivi_des_drones.Core.Interfaces.Repositories;
 using suivi_des_drones.Core.Models;
+using suivi_des_drones.Core.Infrastructure.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-    //.AddRazorPagesOptions(option=>
-    //option.Conventions.AddPageRoute("/CreateDrone", "/creation-drone")
-    //);
+//.AddRazorPagesOptions(option=>
+//option.Conventions.AddPageRoute("/CreateDrone", "/creation-drone")
+//);
 
 builder.Services.AddDbContext<DronesDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DroneContext");
     options.UseSqlServer(connectionString);
 });
-builder.Services.AddScoped<IDroneDatalayer,SqlServerDroneDataLayer>();
+builder.Services.AddScoped<IDroneDatalayer, SqlServerDroneDataLayer>();
 builder.Services.AddScoped<IUserDataLayer, SqlServerUserDatalayer>();
-builder.Services.AddScoped<IDroneRepository,DroneRepository>();
+builder.Services.AddScoped<IDroneRepository, DroneRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout= TimeSpan.FromSeconds(10);
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -46,8 +49,25 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseSession();
+app.UseAuthorization();
+
+//Deuxiéme version de config de session "Middleware"
+app.UseRedirectIfNotConnected();
+
+//premiére version de config de session "Middleware"
+//app.Use(async (context, next) =>
+//{
+//    var id = context.Session.GetInt32("UserId");
+//    var isLoginPage = context.Request.Path.Value?.ToLower().Contains("login");
+
+//    if (!id.HasValue && (!isLoginPage.HasValue || !isLoginPage.Value))
+//    {
+//        context.Response.Redirect("/Login");
+//        return;
+//    }
+//    await next.Invoke(context);
+//});
 
 app.MapRazorPages();
 

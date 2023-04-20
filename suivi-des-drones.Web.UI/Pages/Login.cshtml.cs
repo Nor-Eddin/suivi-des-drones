@@ -21,6 +21,14 @@ namespace suivi_des_drones.Web.UI.Pages
         public IActionResult OnPost()
         {
             IActionResult result=this.Page();
+            try
+            {
+                this.HttpContext.Session.SetInt32("UserId", 1234);
+                result = this.RedirectToPage("/Index");
+            }catch (Exception ex)
+            {
+
+            }
             return result;
         }
         #endregion
