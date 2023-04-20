@@ -22,10 +22,10 @@ namespace suivi_des_drones.Core.Infrastructure.Web.Middlewares
         #region Public methods
         public async Task InvokeAsync(HttpContext context)
         {
-            var id = context.Session.GetInt32("UserId");
+            var id = context.Session.GetString("UserId");
             var isLoginPage = context.Request.Path.Value?.ToLower().Contains("login");
 
-            if (!id.HasValue && (!isLoginPage.HasValue || !isLoginPage.Value))
+            if (string.IsNullOrEmpty(id) && (!isLoginPage.HasValue || !isLoginPage.Value))
             {
                     context.Response.Redirect("/Login");
                     return;
