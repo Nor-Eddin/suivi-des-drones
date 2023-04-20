@@ -38,10 +38,12 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
         }
         public void AddOne(Drone drone)
         {
+
             Context?.Drones.Add(drone);
             //var entry = this.context?.Entry(drone.HealthStatus);           
             //entry.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
             Context?.SaveChanges();
+
         }
 
         #endregion
