@@ -11,7 +11,7 @@ namespace suivi_des_drones.Core.Infrastructure.Databases
     public class DronesDbContext:DbContext
     {
         #region Constructors
-        public DronesDbContext(DbContextOptions options) : base(options)
+        public DronesDbContext(DbContextOptions<DronesDbContext> options) : base(options)
         {
 
         }
