@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\suivi-des-drones.Core.Application\suivi-des-drones.Core.Application.csproj" />
+    <ProjectReference Include="..\suivi-des-drones.Core.Infrastructure.Web\suivi-des-drones.Core.Infrastructure.Web.csproj" />
     <ProjectReference Include="..\suivi-des-drones.Core.Infrastructure\suivi-des-drones.Core.Infrastructure.csproj" />
     <ProjectReference Include="..\suivi-des-drones.Core.Interfaces\suivi-des-drones.Core.Interfaces.csproj" />
     <ProjectReference Include="..\suivi-des-drones.Core.Models\suivi-des-drones.Core.Models.csproj" />

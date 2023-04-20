@@ -29,11 +29,13 @@ namespace suivi_des_drones.Core.Infrastructure.Databases
             //modelBuilder.Entity<Drone>().HasKey(item => item.Matricule);
             modelBuilder.ApplyConfiguration(new EntityConfigurations.DroneEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new EntityConfigurations.HealthStatusEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new EntityConfigurations.UserEntityTypeConfiguration());
         }
         #endregion
         #region Properties
         public DbSet<Drone> Drones { get; set; }
         public DbSet<Drone>HealthStatuses { get; set; }
+        public DbSet<CompleteUser> Users { get; set; }
         #endregion
     }
 }

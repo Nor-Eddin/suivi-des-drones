@@ -37,7 +37,9 @@ namespace suivi_des_drones.Core.Application.Repositories
         }
         public void Save(Drone drone)
         {
-            drone.HealthStatus = HealthStatus.OK;
+
+            drone.healthStatusId = HealthStatus.OK.Id;
+
             this.datalayer.AddOne(drone);
         }
         #endregion

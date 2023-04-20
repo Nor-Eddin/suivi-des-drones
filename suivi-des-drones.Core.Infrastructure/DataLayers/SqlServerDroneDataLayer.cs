@@ -6,18 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace suivi_des_drones.Core.Infrastructure.DataLayers
 {
-    public class SqlServerDroneDataLayer : IDroneDatalayer
+    public class SqlServerDroneDataLayer : BaseSqlDatalayer,IDroneDatalayer
     {
         #region Fields
-        private readonly DronesDbContext? context = null;
+        
         #endregion
+
         #region Constructor
-        public SqlServerDroneDataLayer(DronesDbContext context)
+        public SqlServerDroneDataLayer(DronesDbContext context):base(context)
         {
-            this.context = context;
+            
         }
 
         #endregion
@@ -27,8 +29,8 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
             #region a modifier
             //using var context = new DronesDbContext();
             #endregion
-            
-            var query=from item in this.context?.Drones
+            //recupére les donnée des drone et les healthstatus mais avec include et pas avec les jointures, via la clefs etrangere... bcp + rapide
+            var query=from item in this.Context?.Drones.Include(item=>item.HealthStatus)
                       //where item.CreationDate == DateTime.Now
                       select item;
             return query.ToList();
@@ -36,10 +38,12 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
         }
         public void AddOne(Drone drone)
         {
-            this.context?.Drones.Add(drone);
-            var entry = this.context?.Entry(drone.HealthStatus);
-            entry.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
-            this.context?.SaveChanges();
+
+            Context?.Drones.Add(drone);
+            //var entry = this.context?.Entry(drone.HealthStatus);           
+            //entry.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            Context?.SaveChanges();
+
         }
 
         #endregion

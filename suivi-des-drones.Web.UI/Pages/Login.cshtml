@@ -1,0 +1,14 @@
+﻿@page "/Login"
+@model suivi_des_drones.Web.UI.Pages.LoginModel
+@{
+}
+
+
+
+<form class="form-login" method="post">
+    <label>Entrer votre identifiant</label><br />
+    <input asp-for="User.Login" /><br />
+    <label>Entrer votre mot de passe</label><br />
+    <input asp-for="User.Password" /><br />
+    <button>Connectez vous</button>
+</form>

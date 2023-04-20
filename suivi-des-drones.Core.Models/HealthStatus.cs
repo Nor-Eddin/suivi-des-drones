@@ -36,6 +36,7 @@ namespace suivi_des_drones.Core.Models
         public static HealthStatus Repair = new HealthStatus() { Id = -2, Label = "En réparation" };
         public decimal Id { get; init; }
         public string Label { get; init; } = default!;
+        public List<Drone> Drones { get; set; }
 
     }
 

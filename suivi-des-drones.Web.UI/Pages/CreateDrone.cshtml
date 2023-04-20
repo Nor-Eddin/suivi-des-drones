@@ -10,6 +10,12 @@
     @*<input name="Matricule"/>
     <input name="dateCreation"/>*@
     <input asp-for="MonDrone.Matricule"/>
+
+    <span asp-validation-for="MonDrone.Matricule">*</span>
     <input asp-for="MonDrone.CreationDate" />
     <button>Creer</button>@* le premier bouton dans un formulaire est toujour d'office un submit*@
 </form>
+@section scripts{
+    <partial name="_ValidationScriptsPartial"/>
+}
+
