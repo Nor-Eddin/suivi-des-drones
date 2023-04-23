@@ -62,8 +62,8 @@ app.UseSession();
 app.UseAuthentication();;
 app.UseAuthorization();
 
-//Deuxi�me version de config de session "Middleware"
-app.UseRedirectIfNotConnected();
+//Deuxi�me version de config de session "Middleware"( mis en commentaire pour la config avec identity)
+//app.UseRedirectIfNotConnected();
 
 //premi�re version de config de session "Middleware"
 //app.Use(async (context, next) =>
