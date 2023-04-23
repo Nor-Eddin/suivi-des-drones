@@ -2,11 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using suivi_des_drones.Web.UI.Areas.Identity.Data;
+//using Microsoft.Extensions.Logging;
 
 namespace suivi_des_drones.Web.UI.Areas.Identity.Pages.Account.Manage
 {
