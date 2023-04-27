@@ -4,11 +4,9 @@ using suivi_des_drones.Core.Infrastructure.Databases;
 using suivi_des_drones.Core.Infrastructure.DataLayers;
 using suivi_des_drones.Core.Interfaces.Infrastructures;
 using suivi_des_drones.Core.Interfaces.Repositories;
-
 using suivi_des_drones.Core.Infrastructure.Web.Middlewares;
 using Microsoft.AspNetCore.Identity;
-using suivi_des_drones.Web.UI.Data;
-using suivi_des_drones.Web.UI.Areas.Identity.Data;
+using suivi_des_drones.Core.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,12 +19,12 @@ var connectionString = builder.Configuration.GetConnectionString("DroneContext")
 
 builder.Services.AddDbContext<DronesDbContext>(options =>
 {
+    
     options.UseSqlServer(connectionString);
 });
 
 builder.Services.AddDefaultIdentity<AuthenticationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AuthenticationContext>();
-
 builder.Services.AddDbContext<AuthenticationContext>(options =>options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IDroneDatalayer, SqlServerDroneDataLayer>();
@@ -62,7 +60,7 @@ app.UseSession();
 app.UseAuthentication();;
 app.UseAuthorization();
 
-//Deuxi�me version de config de session "Middleware"( mis en commentaire pour la config avec identity)
+//Deuxi�me version de config de session "Middleware"(mis en commentaire pour utilisations avec identity)
 //app.UseRedirectIfNotConnected();
 
 //premi�re version de config de session "Middleware"
