@@ -81,7 +81,9 @@
         @foreach (var item in PrepareListOfDrones())
         {
             <tr>
-                <td>@item.Matricule</td>
+                <td>
+                    <a asp-page="OneDrone" asp-route-matricule="@item.Matricule"> @item.Matricule</a>
+                </td>
                 <td>
                     @{
                         //gestions avec if()

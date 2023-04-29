@@ -36,6 +36,13 @@ namespace suivi_des_drones.Core.Infrastructure.DataLayers
             return query.ToList();
             
         }
+        public Drone? GetOne(string matricule)
+        {
+            return this.Context.Drones
+                .Include(item => item.HealthStatus)
+                .First(item => item.Matricule == matricule);
+        }
+
         public void AddOne(Drone drone)
         {
 

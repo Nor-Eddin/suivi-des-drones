@@ -29,8 +29,8 @@ namespace suivi_des_drones.Web.UI.Pages
         public IActionResult OnPost()
         {
             IActionResult result = this.Page();
-            if (this.ModelState.IsValid)
-            {
+            //if (this.ModelState.IsValid)
+            //{
 
 
             //premiére facon de faire
@@ -41,7 +41,7 @@ namespace suivi_des_drones.Web.UI.Pages
             this.MonDrone = new();
             this.ModelState.Clear();
                 result = this.RedirectToPagePermanent("./CreateDrone");
-            }
+            //}
             return result;
 
         }

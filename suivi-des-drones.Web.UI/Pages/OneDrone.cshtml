@@ -1,0 +1,17 @@
+﻿@page "/un-drone/{matricule:matconst}"
+@model suivi_des_drones.Web.UI.Pages.OneDroneModel
+@{
+}
+
+<h1>@Model.Drone?.Matricule</h1>
+<div class="row">
+    <div class="col">
+        Date de creation : 
+    </div>
+    <div class="col">
+        @Model.Drone?.CreationDate
+    </div>
+    <div class="col">
+        @Model.Drone?.HealthStatus.Label
+    </div>
+</div>

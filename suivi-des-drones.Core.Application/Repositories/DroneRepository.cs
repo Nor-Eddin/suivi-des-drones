@@ -32,8 +32,21 @@ namespace suivi_des_drones.Core.Application.Repositories
 
         public List<Drone> GetAll()
         {
+            //premiére facon de faire standard et facons simplifié pour finir
+            //List<Drone> list = this.datalayer.GetList();
+            //return list;
             return this.datalayer.GetList();
            
+        }
+        public Drone GetOne(string matricule)
+        {
+
+            Drone drone=this.datalayer.GetOne(matricule);
+            if (drone == null) 
+            {
+                throw new ArgumentNullException("matricule");
+            }
+            return drone;
         }
         public void Save(Drone drone)
         {
